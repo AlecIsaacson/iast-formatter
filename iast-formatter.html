@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta content='Validate New Relic Java agent YAML and add IAST settings' name='description'>
+<title>New Relic IAST Validator</title>
+<link rel="stylesheet" media="all" href="./lta.css" data-turbolinks-track="true" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script src="./packed.js" ></script>
+<script src="./lta.js" ></script>
+</head>
+
+<body style='font-family:Helvetica'>
+<div id='wrapper' style='width:920px;margin:auto;'>
+<div id='main_content' style='float:left;width:780px;'>
+<h1>New Relic IAST Help Tool</h1>
+<p>Paste in your YAML and click "Go" - we'll tell you if it's valid or not.  Hit the checkbox and we'll add the settings needed to enable IAST.</p>
+
+<textarea name="yaml" id="yaml" rows="20" class="lined" style="background-color:#EEEEEE;width:100%" oninput="yamlChanged()"></textarea>
+<button type="button" onclick="parseYaml()">Validate YAML</button>
+<input type="checkbox" id="enableIast" name="enableIast" />
+<label id="enableIast_label" for="enableIast"> Enable IAST</label>
+
+<div id='result' style="color:white;width:100%;padding:10px;"></div>
+
+<script src="formatter.js"></script>
+
+</div>
+<div style='clear:both;'></div>
+</div>
+</body>
+</html>
